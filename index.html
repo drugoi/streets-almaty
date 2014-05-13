@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Старые — Новые названия улиц Алматы</title>
+	
+	<link rel="stylesheet" href="css/styles.css">
+	
+	<script src="bower_components/jquery/jquery.min.js"></script>
+	<script src="js/jquery.autocomplete/dist/jquery.autocomplete.min.js"></script>
+	<script src="js/streets.js"></script>
+</head>
+<body>
+	<header class="b-header">
+		<h1 class="e-title">Старые → Новые названия улиц Алматы</h1>	
+	</header>
+	
+	<input type="text" class="e-search__street" placeholder="Введите новое или старое название улицы">
+	
+	<div class="b-search__items"></div>
+	
+	<div class="b-existing__items"></div>
+	
+	<table class="b-existing__items">
+		<thead>
+			<tr class="b-title__wrapper">
+				<td class="e-old__name__title">Старое название</td>
+				<td class="e-name__cursor" width="100">→</td>
+				<td class="e-new__name__title">Новое название</td>
+			</tr>
+		</thead>
+		<tbody class="b-existing__items__wrapper">
+			
+		</tbody>
+	</table>
+</body>
+</html>
