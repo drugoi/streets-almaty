@@ -15,7 +15,7 @@ module.exports = function(grunt) {
 		watch: {
 			css: {
 				files: ['css/dev/*.css'],
-				tasks: ['autoprefixer', 'borshik']
+				tasks: ['autoprefixer', 'borschik']
 			},
 			html: {
 				files: ['index.dev.html'],
