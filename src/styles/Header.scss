@@ -1,0 +1,12 @@
+header {
+  height: 70px;
+  background: #2980b9;
+  line-height: 70px;
+}
+
+.header__title {
+  @include grid-row();
+  padding: 0 20px;
+  color: #FFF;
+  font-size: 25px;
+}

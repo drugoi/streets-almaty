@@ -1,0 +1,19 @@
+@mixin clearfix() {
+  *zoom:1;
+  
+  &:before,
+  &:after {
+    display: table;
+    content: " "; 
+  }
+  &:after{
+    clear: both;
+  }
+}
+
+@mixin grid-row() {
+  @include clearfix();
+  margin-right: auto;
+  margin-left: auto;
+  width: $main-width;
+}
