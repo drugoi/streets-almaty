@@ -17,3 +17,6 @@ xcuserdata
 .svn
 CVS
 node_modules/
+*.codekit
+
+styles/.sass-cache/06339bd40e5da098d429e8db4b7ba7a796d8e970/grid.scssc
