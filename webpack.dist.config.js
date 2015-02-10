@@ -21,7 +21,8 @@ module.exports = {
   entry: [
     './src/scripts/components/StreetsReactApp.js',
     './src/scripts/components/Header.js',
-    './src/scripts/components/Input.js'
+    './src/scripts/components/Input.js',
+    './src/scripts/components/Streets.js'
   ],
 
   stats: {
