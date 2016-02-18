@@ -1,13 +1,13 @@
 'use strict';
 
-var mountFolder = function (connect, dir) {
+var mountFolder = function(connect, dir) {
   return connect.static(require('path').resolve(dir));
 };
 
 var webpackDistConfig = require('./webpack.dist.config.js'),
-    webpackDevConfig = require('./webpack.config.js');
+  webpackDevConfig = require('./webpack.config.js');
 
-module.exports = function (grunt) {
+module.exports = function(grunt) {
   // Let *load-grunt-tasks* require everything
   require('load-grunt-tasks')(grunt);
 
@@ -47,7 +47,7 @@ module.exports = function (grunt) {
       dist: {
         options: {
           keepalive: true,
-          middleware: function (connect) {
+          middleware: function(connect) {
             return [
               mountFolder(connect, pkgConfig.dist)
             ];
@@ -84,8 +84,7 @@ module.exports = function (grunt) {
             src: ['<%= pkg.src %>/*'],
             dest: '<%= pkg.dist %>/',
             filter: 'isFile'
-          },
-          {
+          }, {
             flatten: true,
             expand: true,
             src: ['<%= pkg.src %>/images/*'],
@@ -107,7 +106,7 @@ module.exports = function (grunt) {
     }
   });
 
-  grunt.registerTask('serve', function (target) {
+  grunt.registerTask('serve', function(target) {
     if (target === 'dist') {
       return grunt.task.run(['build', 'open:dist', 'connect:dist']);
     }
