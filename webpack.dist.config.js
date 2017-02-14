@@ -16,7 +16,6 @@ module.exports = {
     filename: 'main.js'
   },
 
-  debug: false,
   devtool: false,
   entry: [
     './src/scripts/components/StreetsReactApp.js',
@@ -31,26 +30,26 @@ module.exports = {
   },
 
   plugins: [
-    new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin(),
-    new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.optimize.AggressiveMergingPlugin()
+    new webpack.optimize.OccurrenceOrderPlugin(),
+    new webpack.optimize.AggressiveMergingPlugin(),
+    new webpack.LoaderOptionsPlugin({
+      debug: false
+    })
   ],
 
   resolve: {
-    extensions: ['', '.js']
+    extensions: ['.js']
   },
 
   module: {
-    preLoaders: [{
-      test: '\\.js$',
-      exclude: 'node_modules',
-      loader: 'jshint'
-    }],
-
-    loaders: [{
+    rules: [{
       test: /\.js$/,
-      loader: 'jsx-loader?harmony'
+      exclude: /(node_modules|bower_components)/,
+      loader: 'babel-loader',
+      query: {
+        presets: ['es2015', 'react']
+      }
     }, {
       test: /\.css$/,
       loader: 'style-loader!css-loader'
