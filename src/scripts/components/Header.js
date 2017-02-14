@@ -1,9 +1,8 @@
-'use strict';
+import React from 'react';
+// var addons = require('react-addons');
 
-var React = require('react/addons');
-
-var Header = React.createClass({
-  render: function () {
+const Header = React.createClass({
+  render() {
     return (
       <header>
         <h1 className='header__title'>Старые &mdash; Новые названия улиц Алматы</h1>
@@ -12,5 +11,4 @@ var Header = React.createClass({
   }
 });
 
-module.exports = Header; 
-
+export default Header;

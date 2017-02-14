@@ -1,31 +1,29 @@
-'use strict';
-
-var React = require('react/addons');
-var ReactTransitionGroup = React.addons.TransitionGroup;
+import React from 'react';
+import ReactDOM from 'react-dom';
 
 // Export React so the devtools can find it
 (window !== window.top ? window.top : window).React = React;
 
 // SCSS
-require('!style!css!sass!../../styles/main.scss');
-
+require('!style-loader!css-loader!sass-loader!../../styles/main.scss');
 
 // Components
-var Header = require('./Header.js');
-var Input = require('./Input.js');
-require('./Streets.js');
+import Header from './Header.js';
 
-var StreetsReactApp = React.createClass({
-  render: function() {
+import Input from './Input.js';
+import Streets from './Streets.js';
+
+class StreetsReactApp extends React.Component {
+  render() {
     return (
       <div className='container'>
         <Header />
-        <Input items={streets}/>
-        
+        <Input items={Streets()}/>
       </div>
     );
   }
-});
-React.render(<StreetsReactApp />, document.body); // jshint ignore:line
+}
 
-module.exports = StreetsReactApp;
+ReactDOM.render(<StreetsReactApp />, document.getElementById('streetsapp'));
+
+export default StreetsReactApp;

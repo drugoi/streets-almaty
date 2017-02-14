@@ -1,24 +1,24 @@
-'use strict';
+import React from 'react';
+// var addons = require('react-addons');
 
-var React = require('react/addons');
-
-var Input = React.createClass({
-  getInitialState: function() {
+const Input = React.createClass({
+  getInitialState() {
     return {searchstring: ''};
   },
-  handleChange: function(e) {
+  handleChange(e) {
     this.setState({searchstring: e.target.value});
   },
-  render: function () {
-    var streets = this.props.items;
-    var searchString = this.state.searchstring.trim().toLowerCase();
-    
+  propTypes: {
+    items: React.PropTypes.array
+  },
+  render() {
+    let streets = this.props.items;
+    const searchString = this.state.searchstring.trim().toLowerCase();
+
     if (searchString.length > 0) {
-      streets = streets.filter(function(s) {
-        return s.old.toLowerCase().match(searchString) || s.new.toLowerCase().match(searchString);
-      });
+      streets = streets.filter(s => s.old.toLowerCase().match(searchString) || s.new.toLowerCase().match(searchString));
     }
-    
+
     return (
       <main className='search'>
         <form>
@@ -29,14 +29,10 @@ var Input = React.createClass({
             <span className='search__data-title _old'>Старое название</span> <span className='search__data-title _new'>Новое название</span>
           </div>
         {
-          streets.map(function(s, id) {
-            return (
-              <div className='search__data-row' key={id}>
-                <span className='search__data-title _old'>{s.old}</span>
-                <span className='search__data-title _new'>{s.new}</span>
-              </div>
-            )
-          })
+          streets.map((s, id) => <div className='search__data-row' key={id}>
+            <span className='search__data-title _old'>{s.old}</span>
+            <span className='search__data-title _new'>{s.new}</span>
+          </div>)
         }
         </div>
       </main>
@@ -44,5 +40,4 @@ var Input = React.createClass({
   }
 });
 
-module.exports = Input; 
-
+export default Input;
