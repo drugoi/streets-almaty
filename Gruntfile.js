@@ -1,18 +1,15 @@
-'use strict';
+const mountFolder = (connect, dir) => connect.static(require('path')
+  .resolve(dir));
 
-var mountFolder = function(connect, dir) {
-  return connect.static(require('path').resolve(dir));
-};
+const webpackDistConfig = require('./webpack.dist.config.js');
+const webpackDevConfig = require('./webpack.config.js');
 
-var webpackDistConfig = require('./webpack.dist.config.js'),
-  webpackDevConfig = require('./webpack.config.js');
-
-module.exports = function(grunt) {
+module.exports = (grunt) => {
   // Let *load-grunt-tasks* require everything
   require('load-grunt-tasks')(grunt);
 
   // Read configuration from package.json
-  var pkgConfig = grunt.file.readJSON('package.json');
+  const pkgConfig = grunt.file.readJSON('package.json');
 
   grunt.initConfig({
     pkg: pkgConfig,
@@ -31,11 +28,10 @@ module.exports = function(grunt) {
         port: 8000,
         webpack: webpackDevConfig,
         publicPath: '/assets/',
-        contentBase: './<%= pkg.src %>/',
+        contentBase: './<%= pkg.src %>/'
       },
-
       start: {
-        keepAlive: true,
+        webpack: {}
       }
     },
 
@@ -47,7 +43,7 @@ module.exports = function(grunt) {
       dist: {
         options: {
           keepalive: true,
-          middleware: function(connect) {
+          middleware(connect) {
             return [
               mountFolder(connect, pkgConfig.dist)
             ];
@@ -89,7 +85,7 @@ module.exports = function(grunt) {
             expand: true,
             src: ['<%= pkg.src %>/images/*'],
             dest: '<%= pkg.dist %>/images/'
-          },
+          }
         ]
       }
     },
@@ -106,7 +102,7 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.registerTask('serve', function(target) {
+  grunt.registerTask('serve', target => {
     if (target === 'dist') {
       return grunt.task.run(['build', 'open:dist', 'connect:dist']);
     }

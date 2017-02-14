@@ -1,0 +1,26 @@
+{
+    "extends": [
+      "standard",
+      "plugin:react/recommended"
+    ],
+    "parserOptions": {
+      "ecmaVersion": 6,
+      "sourceType": "module"
+    },
+    "env": {
+      "browser": true,
+      "node": true
+    },
+    "plugins": [
+      "standard",
+      "promise",
+      "react"
+    ],
+    "rules": {
+      "no-console": 0,
+      "no-underscore-dangle": 1,
+      "quotes": [2, "single"],
+      "semi": ["error", "always"],
+      "space-before-function-paren": ["error", "never"]
+    }
+}

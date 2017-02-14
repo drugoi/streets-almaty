@@ -15,7 +15,6 @@ module.exports = {
   },
 
   cache: true,
-  debug: true,
   devtool: false,
   entry: [
     'webpack/hot/only-dev-server',
@@ -31,17 +30,16 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['', '.js']
+    extensions: ['.js']
   },
   module: {
-    preLoaders: [{
-      test: '\\.js$',
-      exclude: 'node_modules',
-      loader: 'jshint'
-    }],
-    loaders: [{
+    rules: [{
       test: /\.js$/,
-      loader: 'react-hot!jsx-loader?harmony'
+      exclude: /(node_modules|bower_components)/,
+      loader: 'babel-loader',
+      query: {
+        presets: ['es2015', 'react']
+      }
     }, {
       test: /\.sass/,
       loader: 'style-loader!css-loader!sass-loader?outputStyle=expanded'
@@ -56,7 +54,10 @@ module.exports = {
 
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    new webpack.NoEmitOnErrorsPlugin(),
+    new webpack.LoaderOptionsPlugin({
+      debug: true
+    })
   ]
 
 };
