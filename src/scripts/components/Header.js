@@ -1,11 +1,13 @@
 import React from 'react';
-// var addons = require('react-addons');
+import CreateReactClass from 'create-react-class';
 
-const Header = React.createClass({
+const Header = CreateReactClass({
   render() {
     return (
       <header>
-        <h1 className='header__title'>Старые &mdash; Новые названия улиц Алматы</h1>
+        <h1 className="header__title">
+          Старые &mdash; Новые названия улиц Алматы
+        </h1>
       </header>
     );
   }

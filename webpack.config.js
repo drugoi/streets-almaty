@@ -8,7 +8,6 @@
 var webpack = require('webpack');
 
 module.exports = {
-
   output: {
     filename: 'main.js',
     publicPath: '/assets/'
@@ -21,7 +20,8 @@ module.exports = {
     './src/scripts/components/StreetsReactApp.js',
     './src/scripts/components/Header.js',
     './src/scripts/components/Input.js',
-    './src/scripts/components/Streets.js'
+    './src/scripts/components/Streets.js',
+    './src/styles/main.scss'
   ],
 
   stats: {
@@ -33,23 +33,34 @@ module.exports = {
     extensions: ['.js']
   },
   module: {
-    rules: [{
-      test: /\.js$/,
-      exclude: /(node_modules|bower_components)/,
-      loader: 'babel-loader',
-      query: {
-        presets: ['es2015', 'react']
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /(node_modules|bower_components)/,
+        loader: 'babel-loader',
+        query: {
+          presets: ['es2015', 'react']
+        }
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          {
+            loader: 'style-loader'
+          },
+          {
+            loader: 'css-loader'
+          },
+          {
+            loader: 'sass-loader'
+          }
+        ]
+      },
+      {
+        test: /\.(png|jpg)$/,
+        loader: 'url-loader?limit=8192'
       }
-    }, {
-      test: /\.sass/,
-      loader: 'style-loader!css-loader!sass-loader?outputStyle=expanded'
-    }, {
-      test: /\.css$/,
-      loader: 'style-loader!css-loader'
-    }, {
-      test: /\.(png|jpg)$/,
-      loader: 'url-loader?limit=8192'
-    }]
+    ]
   },
 
   plugins: [
@@ -59,5 +70,4 @@ module.exports = {
       debug: true
     })
   ]
-
 };

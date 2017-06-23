@@ -1,10 +1,10 @@
-const mountFolder = (connect, dir) => connect.static(require('path')
-  .resolve(dir));
+const mountFolder = (connect, dir) =>
+  connect.static(require('path').resolve(dir));
 
 const webpackDistConfig = require('./webpack.dist.config.js');
 const webpackDevConfig = require('./webpack.config.js');
 
-module.exports = (grunt) => {
+module.exports = grunt => {
   // Let *load-grunt-tasks* require everything
   require('load-grunt-tasks')(grunt);
 
@@ -44,9 +44,7 @@ module.exports = (grunt) => {
         options: {
           keepalive: true,
           middleware(connect) {
-            return [
-              mountFolder(connect, pkgConfig.dist)
-            ];
+            return [mountFolder(connect, pkgConfig.dist)];
           }
         }
       }
@@ -80,7 +78,8 @@ module.exports = (grunt) => {
             src: ['<%= pkg.src %>/*'],
             dest: '<%= pkg.dist %>/',
             filter: 'isFile'
-          }, {
+          },
+          {
             flatten: true,
             expand: true,
             src: ['<%= pkg.src %>/images/*'],
@@ -92,12 +91,12 @@ module.exports = (grunt) => {
 
     clean: {
       dist: {
-        files: [{
-          dot: true,
-          src: [
-            '<%= pkg.dist %>'
-          ]
-        }]
+        files: [
+          {
+            dot: true,
+            src: ['<%= pkg.dist %>']
+          }
+        ]
       }
     }
   });
@@ -107,9 +106,7 @@ module.exports = (grunt) => {
       return grunt.task.run(['build', 'open:dist', 'connect:dist']);
     }
 
-    grunt.task.run([
-      'webpack-dev-server'
-    ]);
+    grunt.task.run(['webpack-dev-server']);
   });
 
   grunt.registerTask('test', ['karma']);

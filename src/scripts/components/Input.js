@@ -1,39 +1,56 @@
 import React from 'react';
-// var addons = require('react-addons');
+import PropTypes from 'prop-types';
+import CreateReactClass from 'create-react-class';
 
-const Input = React.createClass({
+const Input = CreateReactClass({
   getInitialState() {
-    return {searchstring: ''};
+    return {
+      searchstring: ''
+    };
   },
   handleChange(e) {
-    this.setState({searchstring: e.target.value});
+    this.setState({
+      searchstring: e.target.value
+    });
   },
   propTypes: {
-    items: React.PropTypes.array
+    items: PropTypes.array
   },
   render() {
     let streets = this.props.items;
     const searchString = this.state.searchstring.trim().toLowerCase();
 
     if (searchString.length > 0) {
-      streets = streets.filter(s => s.old.toLowerCase().match(searchString) || s.new.toLowerCase().match(searchString));
+      streets = streets.filter(
+        s =>
+          s.old.toLowerCase().match(searchString) ||
+          s.new.toLowerCase().match(searchString)
+      );
     }
 
     return (
-      <main className='search'>
+      <main className="search">
         <form>
-          <input value={this.state.searchString} onChange={this.handleChange} type="text" className="Input" placeholder="Введите старое или новое название улицы" autoFocus />
+          <input
+            value={this.state.searchString}
+            onChange={this.handleChange}
+            type="text"
+            className="Input"
+            placeholder="Введите старое или новое название улицы"
+            autoFocus
+          />
         </form>
-        <div className='search__data'>
-          <div className='search__data-row _top'>
-            <span className='search__data-title _old'>Старое название</span> <span className='search__data-title _new'>Новое название</span>
+        <div className="search__data">
+          <div className="search__data-row _top">
+            <span className="search__data-title _old">Старое название</span>
+            <span className="search__data-title _new">Новое название</span>
           </div>
-        {
-          streets.map((s, id) => <div className='search__data-row' key={id}>
-            <span className='search__data-title _old'>{s.old}</span>
-            <span className='search__data-title _new'>{s.new}</span>
-          </div>)
-        }
+          {streets.map((s, id) =>
+            <div className="search__data-row" key={id}>
+              <span className="search__data-title _old">{s.old}</span>
+              <span className="search__data-title _new">{s.new}</span>
+            </div>
+          )}
         </div>
       </main>
     );
