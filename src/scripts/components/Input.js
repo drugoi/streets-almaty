@@ -30,12 +30,12 @@ const Input = CreateReactClass({
 
     return (
       <main className="search">
-        <form>
+        <form className="input__wrapper">
           <input
             value={this.state.searchString}
             onChange={this.handleChange}
             type="text"
-            className="Input"
+            className="input"
             placeholder="Введите старое или новое название улицы"
             autoFocus
           />
