@@ -1,10 +1,3 @@
-/*
- * Webpack development server configuration
- *
- * This file is set up for serving the webpak-dev-server, which will watch for changes and recompile as required if
- * the subfolder /webpack-dev-server/ is visited. Visiting the root will not automatically reload.
- */
-'use strict';
 var webpack = require('webpack');
 
 module.exports = {
@@ -17,10 +10,10 @@ module.exports = {
   devtool: false,
   entry: [
     'webpack/hot/only-dev-server',
-    './src/scripts/components/StreetsReactApp.js',
-    './src/scripts/components/Header.js',
-    './src/scripts/components/Input.js',
-    './src/scripts/components/Streets.js',
+    './src/App.js',
+    './src/components/Header.js',
+    './src/components/Input.js',
+    './src/components/Streets.js',
     './src/styles/main.scss'
   ],
 

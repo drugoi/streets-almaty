@@ -18,10 +18,10 @@ module.exports = {
 
   devtool: false,
   entry: [
-    './src/scripts/components/StreetsReactApp.js',
-    './src/scripts/components/Header.js',
-    './src/scripts/components/Input.js',
-    './src/scripts/components/Streets.js',
+    './src/App.js',
+    './src/components/Header.js',
+    './src/components/Input.js',
+    './src/components/Streets.js',
     './src/styles/main.scss'
   ],
 

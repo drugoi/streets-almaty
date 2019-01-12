@@ -1,24 +1,24 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import CreateReactClass from 'create-react-class';
 
-const Input = CreateReactClass({
-  getInitialState() {
-    return {
-      searchstring: ''
+class Input extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      searchString: ''
     };
-  },
+  }
+
   handleChange(e) {
     this.setState({
-      searchstring: e.target.value
+      searchString: e.target.value
     });
-  },
-  propTypes: {
-    items: PropTypes.array
-  },
+  }
+
   render() {
     let streets = this.props.items;
-    const searchString = this.state.searchstring.trim().toLowerCase();
+    const searchString = this.state.searchString.trim().toLowerCase();
 
     if (searchString.length > 0) {
       streets = streets.filter(
@@ -45,16 +45,20 @@ const Input = CreateReactClass({
             <span className="search__data-title _old">Старое название</span>
             <span className="search__data-title _new">Новое название</span>
           </div>
-          {streets.map((s, id) =>
+          {streets.map((s, id) => (
             <div className="search__data-row" key={id}>
               <span className="search__data-title _old">{s.old}</span>
               <span className="search__data-title _new">{s.new}</span>
             </div>
-          )}
+          ))}
         </div>
       </main>
     );
   }
-});
+}
+
+Input.propTypes = {
+  items: PropTypes.array
+};
 
 export default Input;

@@ -1,15 +1,12 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
 // Components
-import Header from './Header.js';
-import Input from './Input.js';
-import Streets from './Streets.js';
+import Header from './components/Header.js';
+import Input from './components/Input.js';
+import Streets from './components/Streets.js';
 
-// Export React so the devtools can find it
-(window !== window.top ? window.top : window).React = React;
-
-class StreetsReactApp extends React.Component {
+class StreetsReactApp extends Component {
   render() {
     return (
       <div className="container">

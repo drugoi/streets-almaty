@@ -14,7 +14,8 @@
   color: #34495e;
   border: 2px solid #bdc3c7;
   border-radius: 6px;
-  transition: border-color 0.25s linear, color 0.25s linear, background-color 0.25s linear;
+  transition: border-color 0.25s linear, color 0.25s linear,
+    background-color 0.25s linear;
   appearance: none;
 
   &:focus {

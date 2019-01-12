@@ -1,14 +1,18 @@
 {
   "name": "almatystreets",
-  "version": "0.0.1",
-  "description": "",
-  "repository": "",
+  "version": "1.0.0",
   "private": true,
-  "src": "src",
-  "test": "test",
-  "dist": "dist",
-  "mainInput": "AlmatyStreetsApp",
-  "mainOutput": "main",
+  "buildOptions": {
+    "src": "src",
+    "test": "test",
+    "dist": "dist",
+    "mainInput": "AlmatyStreetsApp",
+    "mainOutput": "main"
+  },
+  "scripts": {
+    "start": "grunt serve",
+    "build": "grunt build"
+  },
   "dependencies": {
     "react": "^15.4.2",
     "react-dom": "^15.4.2"

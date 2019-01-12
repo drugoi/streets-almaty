@@ -9,7 +9,7 @@ module.exports = grunt => {
   require('load-grunt-tasks')(grunt);
 
   // Read configuration from package.json
-  const pkgConfig = grunt.file.readJSON('package.json');
+  const pkgConfig = grunt.file.readJSON('package.json').buildOptions;
 
   grunt.initConfig({
     pkg: pkgConfig,
