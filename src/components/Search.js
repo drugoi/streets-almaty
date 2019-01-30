@@ -25,7 +25,7 @@ const InputControl = styled.input`
   max-width: 470px;
   height: 42px;
   padding: 8px 12px;
-  font-size: 2em;
+  font-size: 1rem;
   font-weight: 300;
   color: #34495e;
   border: 2px solid #bdc3c7;
