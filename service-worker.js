@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/streets-almaty/precache-manifest.88e9ed4d44d0e3371fc4cddffd68c7c4.js"
+  "/streets-almaty/precache-manifest.0967261001689b1c12a453207e9c6c89.js"
 );
 
 workbox.clientsClaim();

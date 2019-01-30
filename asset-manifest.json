@@ -1,13 +1,11 @@
 {
-  "main.css": "/streets-almaty/static/css/main.7c700db5.chunk.css",
-  "main.js": "/streets-almaty/static/js/main.7c11be03.chunk.js",
-  "main.js.map": "/streets-almaty/static/js/main.7c11be03.chunk.js.map",
-  "static/js/1.37cb807c.chunk.js": "/streets-almaty/static/js/1.37cb807c.chunk.js",
-  "static/js/1.37cb807c.chunk.js.map": "/streets-almaty/static/js/1.37cb807c.chunk.js.map",
+  "main.js": "/streets-almaty/static/js/main.4eed037c.chunk.js",
+  "main.js.map": "/streets-almaty/static/js/main.4eed037c.chunk.js.map",
+  "static/js/1.045221f0.chunk.js": "/streets-almaty/static/js/1.045221f0.chunk.js",
+  "static/js/1.045221f0.chunk.js.map": "/streets-almaty/static/js/1.045221f0.chunk.js.map",
   "runtime~main.js": "/streets-almaty/static/js/runtime~main.b7e3fc8d.js",
   "runtime~main.js.map": "/streets-almaty/static/js/runtime~main.b7e3fc8d.js.map",
-  "static/css/main.7c700db5.chunk.css.map": "/streets-almaty/static/css/main.7c700db5.chunk.css.map",
   "index.html": "/streets-almaty/index.html",
-  "precache-manifest.88e9ed4d44d0e3371fc4cddffd68c7c4.js": "/streets-almaty/precache-manifest.88e9ed4d44d0e3371fc4cddffd68c7c4.js",
+  "precache-manifest.0967261001689b1c12a453207e9c6c89.js": "/streets-almaty/precache-manifest.0967261001689b1c12a453207e9c6c89.js",
   "service-worker.js": "/streets-almaty/service-worker.js"
 }
