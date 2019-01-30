@@ -1,22 +1,17 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+import React, { Component } from "react";
 
-// Components
-import Header from './components/Header.js';
-import Input from './components/Input.js';
-import Streets from './components/Streets.js';
+import Header from "./components/Header.js";
+import Search from "./components/Search.js";
 
-class StreetsReactApp extends Component {
+class App extends Component {
   render() {
     return (
       <div className="container">
         <Header />
-        <Input items={Streets()} />
+        <Search />
       </div>
     );
   }
 }
 
-ReactDOM.render(<StreetsReactApp />, document.getElementById('streetsapp'));
-
-export default StreetsReactApp;
+export default App;

@@ -1,61 +1,33 @@
 {
-  "name": "almatystreets",
-  "version": "1.0.0",
+  "name": "streets-almaty",
+  "version": "0.1.0",
   "private": true,
-  "buildOptions": {
-    "src": "src",
-    "test": "test",
-    "dist": "dist",
-    "mainInput": "AlmatyStreetsApp",
-    "mainOutput": "main"
+  "homepage": "http://drugoi.github.io/streets-almaty",
+  "dependencies": {
+    "node-sass": "^4.11.0",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-scripts": "2.1.3",
+    "styled-components": "^4.1.3"
   },
   "scripts": {
-    "start": "grunt serve",
-    "build": "grunt build"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build"
   },
-  "dependencies": {
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+  "eslintConfig": {
+    "extends": "react-app"
   },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
   "devDependencies": {
-    "babel-core": "^6.23.1",
-    "babel-loader": "^7.1.0",
-    "babel-preset-es2015": "^6.22.0",
-    "babel-preset-react": "^6.23.0",
-    "css-loader": "^0.28.4",
-    "eslint": "^4.0.0",
-    "eslint-config-airbnb": "^15.0.1",
-    "eslint-config-standard": "^10.2.1",
-    "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-jsx-a11y": "^5.0.3",
-    "eslint-plugin-node": "^5.0.0",
-    "eslint-plugin-promise": "^3.4.1",
-    "eslint-plugin-react": "^7.1.0",
-    "eslint-plugin-standard": "^3.0.1",
-    "grunt": "~1.0.1",
-    "grunt-contrib-clean": "^1.1.0",
-    "grunt-contrib-connect": "~1.0.2",
-    "grunt-contrib-copy": "~1.0.0",
-    "grunt-karma": "~2.0.0",
-    "grunt-open": "~0.2.3",
-    "grunt-webpack": "^3.0.0",
-    "jshint-loader": "~0.8.3",
-    "jsx-loader": "~0.13.2",
-    "karma": "^1.7.0",
-    "karma-chrome-launcher": "^2.1.1",
-    "karma-firefox-launcher": "~1.0.0",
-    "karma-jasmine": "~1.1.0",
-    "karma-phantomjs-launcher": "~1.0.2",
-    "karma-script-launcher": "~1.0.0",
-    "karma-webpack": "~2.0.2",
-    "load-grunt-tasks": "~3.5.2",
-    "node-sass": "^4.5.3",
-    "react-addons": "^0.9.1-deprecated",
-    "react-hot-loader": "^1.3.1",
-    "sass-loader": "^6.0.6",
-    "style-loader": "^0.18.2",
-    "url-loader": "~0.5.7",
-    "webpack": "^3.0.0",
-    "webpack-dev-server": "^2.5.0"
+    "gh-pages": "^2.0.1"
   }
 }
