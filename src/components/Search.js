@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 
 import styled, { css } from "styled-components";
 
@@ -51,51 +51,40 @@ const InputControl = styled.input`
     `}
 `;
 
-class Search extends Component {
-  constructor(props) {
-    super(props);
+const Search = () => {
+  const [searchString, setSearchValue] = useState("");
 
-    this.state = {
-      searchString: ""
-    };
-  }
-
-  handleChange = e => {
-    this.setState({
-      searchString: e.target.value
-    });
+  const handleChange = e => {
+    setSearchValue(e.target.value);
   };
 
-  render() {
-    const { searchString } = this.state;
-    let streetsList = streets;
+  let streetsList = streets;
 
-    const cleanedSearchString = searchString.trim().toLowerCase();
+  const cleanedSearchString = searchString.trim().toLowerCase();
 
-    if (cleanedSearchString.length > 0) {
-      streetsList = streets.filter(
-        s =>
-          s.old.toLowerCase().match(cleanedSearchString) ||
-          s.new.toLowerCase().match(cleanedSearchString)
-      );
-    }
-
-    return (
-      <SearchWrapper>
-        <InputWrapper>
-          <InputControl
-            error={!streetsList.length}
-            value={searchString}
-            onChange={this.handleChange}
-            type="text"
-            placeholder="Введите старое или новое название улицы"
-            autoFocus
-          />
-        </InputWrapper>
-        <SearchList streetsList={streetsList} />
-      </SearchWrapper>
+  if (cleanedSearchString.length > 0) {
+    streetsList = streets.filter(
+      s =>
+        s.old.toLowerCase().match(cleanedSearchString) ||
+        s.new.toLowerCase().match(cleanedSearchString)
     );
   }
-}
+
+  return (
+    <SearchWrapper>
+      <InputWrapper>
+        <InputControl
+          error={!streetsList.length}
+          value={searchString}
+          onChange={handleChange}
+          type="text"
+          placeholder="Введите старое или новое название улицы"
+          autoFocus
+        />
+      </InputWrapper>
+      <SearchList streetsList={streetsList} />
+    </SearchWrapper>
+  );
+};
 
 export default Search;
