@@ -1,0 +1,19 @@
+.header {
+    height: 70px;
+    background: #2980b9;
+    line-height: 70px;
+
+    @media screen and (max-width: 425px) {
+        line-height: 1.2;
+        padding: 20px 0;
+    }
+}
+
+.headerTitle {
+    padding: 0 20px;
+    color: #fff;
+    font-size: 1.25rem;
+    margin: 0 auto;
+    max-width: 960px;
+    width: 100%;
+}
