@@ -1,0 +1,27 @@
+.searchRow {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding: 0 10px;
+}
+
+.searchRowHeader {
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.searchRow:hover {
+    background-color: rgba(#3498db, 0.5);
+}
+
+.searchRowItem {
+    display: block;
+    flex-basis: 48%;
+    font-size: 1rem;
+    text-align: left;
+}
+
+.searchRowItemHeader {
+    text-align: center;
+}

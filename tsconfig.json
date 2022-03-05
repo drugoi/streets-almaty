@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "incremental": true,
+    "tsBuildInfoFile": "./build/tsconfig.tsbuildinfo",
+    "target": "es2019",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "allowJs": true,
+    "jsx": "react",
+    "sourceMap": true,
+    "outDir": "./build/",
+    "removeComments": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "baseUrl": "./src",
+    "paths": {},
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "typeRoots": [
+      "./@types",
+      "./node_modules/@types"
+    ],
+    "resolveJsonModule": true
+  }
+}
