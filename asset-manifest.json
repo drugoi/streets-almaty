@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/streets-almaty/static/css/main.5722c920.css",
+    "main.css": "/streets-almaty/static/css/main.853a5378.css",
     "main.js": "/streets-almaty/static/js/main.e9239f35.js",
     "index.html": "/streets-almaty/index.html",
-    "main.5722c920.css.map": "/streets-almaty/static/css/main.5722c920.css.map",
+    "main.853a5378.css.map": "/streets-almaty/static/css/main.853a5378.css.map",
     "main.e9239f35.js.map": "/streets-almaty/static/js/main.e9239f35.js.map"
   },
   "entrypoints": [
-    "static/css/main.5722c920.css",
+    "static/css/main.853a5378.css",
     "static/js/main.e9239f35.js"
   ]
 }
