@@ -2,8 +2,10 @@
     height: 70px;
     background: #2980b9;
     line-height: 70px;
+}
 
-    @media screen and (max-width: 425px) {
+@media screen and (max-width: 425px) {
+    .header {
         line-height: 1.2;
         padding: 20px 0;
     }
