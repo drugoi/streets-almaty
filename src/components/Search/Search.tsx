@@ -10,7 +10,7 @@ import styles from './Search.module.css';
 const Search = () => {
   const [searchString, setSearchValue] = useState('');
 
-  const handleChange = (e: any) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchValue(e.target.value);
   };
 
@@ -46,6 +46,5 @@ const Search = () => {
     </main>
   );
 };
-[];
 
 export default Search;
