@@ -3,11 +3,11 @@ import React, { useState, useMemo } from 'react';
 import clsx from 'clsx';
 
 import streets from '../../streets.json';
-import SearchList from '../SearchList/SearchList';
+import { SearchList } from '../SearchList/SearchList';
 
 import styles from './Search.module.css';
 
-const Search = () => {
+export const Search = () => {
   const [searchString, setSearchValue] = useState('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -46,5 +46,3 @@ const Search = () => {
     </main>
   );
 };
-
-export default Search;

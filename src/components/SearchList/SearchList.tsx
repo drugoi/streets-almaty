@@ -9,11 +9,11 @@ interface Street {
   new: string;
 }
 
-interface IProps {
+interface SearchListProps {
   streetsList: Street[];
 }
 
-const SearchList: FC<IProps> = props => {
+export const SearchList: FC<SearchListProps> = props => {
   const { streetsList } = props;
 
   return (
@@ -39,5 +39,3 @@ const SearchList: FC<IProps> = props => {
     </>
   );
 };
-
-export default SearchList;

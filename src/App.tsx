@@ -1,19 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-import Header from './components/Header/Header';
-import Search from './components/Search/Search';
+import { Header } from './components/Header/Header';
+import { Search } from './components/Search/Search';
 
 import './App.css';
 
-class App extends Component {
-  render() {
-    return (
-      <React.Fragment>
-        <Header />
-        <Search />
-      </React.Fragment>
-    );
-  }
-}
+const App = () => {
+  return (
+    <>
+      <Header />
+      <Search />
+    </>
+  );
+};
 
 export default App;
